@@ -1,0 +1,103 @@
+package Oops;
+
+/**
+ * Represents a student with name, roll number, and marks in five subjects.
+ */
+public class Student {
+    private String name;
+    private long roll;
+    private byte s1, s2, s3, s4, s5;
+
+    /**
+     * Constructor to initialize a student object with name, roll number, and marks in five subjects.
+     *
+     * @param name student's name
+     * @param roll student's roll number
+     * @param s1   marks in subject 1
+     * @param s2   marks in subject 2
+     * @param s3   marks in subject 3
+     * @param s4   marks in subject 4
+     * @param s5   marks in subject 5
+     */
+    public Student(String name, long roll, byte s1, byte s2, byte s3, byte s4, byte s5) {
+        this.name = name;
+        this.roll = roll;
+        this.s1 = s1;
+        this.s2 = s2;
+        this.s3 = s3;
+        this.s4 = s4;
+        this.s5 = s5;
+    }
+
+    /**
+     * Calculates and returns the percentage of marks obtained by the student.
+     *
+     * @param s1 marks in subject 1
+     * @param s2 marks in subject 2
+     * @param s3 marks in subject 3
+     * @param s4 marks in subject 4
+     * @param s5 marks in subject 5
+     * @return the percentage of marks obtained by the student
+     */
+    public byte percentage(byte s1, byte s2, byte s3, byte s4, byte s5) {
+        return (byte) ((s1 + s2 + s3 + s4 + s5) / 5);
+    }
+
+    /**
+     * Prints the grade based on the percentage of marks obtained by the student.
+     *
+     * @param per the percentage of marks obtained by the student
+     */
+    public void grade(byte per) {
+        if (per >= 80) System.out.println("GRADE  " + 'A');
+        else if (per >= 60 && per < 80) System.out.println("GRADE  " + 'B');
+        else System.out.println("GRADE  " + 'C');
+    }
+
+    /**
+     * Displays the student's details including name, roll number, marks in subjects, and grade.
+     */
+    public void display() {
+        byte per = percentage(s1, s2, s3, s4, s5);
+
+        System.out.println("Student [name=" + name + ", roll=" + roll + ", s1=" + s1 + ", s2=" + s2 + ", s3=" + s3 + ", s4=" + s4
+                + ", s5=" + s5 + "]");
+        grade(per);
+    }
+}
+package Oops;
+
+import java.util.Scanner;
+
+public class StudentDriver {
+
+    public static void main(String[] args) {
+        // Create a scanner object for user input
+        Scanner sc = new Scanner(System.in);
+
+        // Prompt user to enter student details
+        System.out.println("Enter Student name:");
+        String name = sc.nextLine();
+        System.out.println("Enter student roll number:");
+        long roll = sc.nextLong();
+        System.out.println("Enter sub_1 marks:");
+        byte s1 = sc.nextByte();
+        System.out.println("Enter sub_2 marks:");
+        byte s2 = sc.nextByte();
+        System.out.println("Enter sub_3 marks:");
+        byte s3 = sc.nextByte();
+        System.out.println("Enter sub_4 marks:");
+        byte s4 = sc.nextByte();
+        System.out.println("Enter sub_5 marks:");
+        byte s5 = sc.nextByte();
+
+        // Create a Student object with the entered details
+        Student S1 = new Student(name, roll, s1, s2, s3, s4, s5);
+
+        // Display the student's details
+        S1.display();
+
+        // Close the scanner
+        sc.close();
+    }
+}
