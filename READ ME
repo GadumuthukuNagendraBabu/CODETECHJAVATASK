@@ -1,0 +1,36 @@
+Student Class
+Purpose
+The Student class represents a student with their name, roll number, and marks in five subjects. It provides methods to calculate the percentage of marks, determine the grade based on the percentage, and display the student's details.
+
+Constructors
+public Student(String name, long roll, byte s1, byte s2, byte s3, byte s4, byte s5): Constructs a new Student object with the specified name, roll number, and marks in five subjects.
+Methods
+public byte percentage(byte s1, byte s2, byte s3, byte s4, byte s5): Calculates and returns the percentage of marks obtained by the student.
+public void grade(byte per): Prints the grade based on the percentage of marks obtained by the student.
+public void display(): Displays the student's details including name, roll number, marks in subjects, and grade.
+Attributes
+private String name: Stores the name of the student.
+private long roll: Stores the roll number of the student.
+private byte s1, s2, s3, s4, s5: Stores the marks obtained by the student in five subjects.
+StudentDriver Class
+Purpose
+The StudentDriver class contains the main method to test the functionality of the Student class. It prompts the user to enter the student's details and then creates a Student object with the entered details to display the student's details and grade.
+
+Methods
+public static void main(String[] args): The main method to test the functionality of the Student class. It prompts the user to enter the student's details, creates a Student object with the entered details, and displays the student's details and grade.
+
+Usage
+To use the Student class, create a new instance of the class with the student's details, and then call the display method to print the student's details and grade.
+Student student = new Student("John Doe", 123456, 80, 75, 85, 90, 95);
+student.display();
+To test the Student class functionality, run the StudentDriver class, which will prompt you to enter the student's details and then display the student's details and grade.
+public class StudentDriver {
+    public static void main(String[] args) {
+        // code to test Student class
+    }
+}
+public class StudentDriver {
+    public static void main(String[] args) {
+        // code to test Student class
+    }
+}
